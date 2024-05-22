@@ -1,9 +1,19 @@
-<h1>Showing the article</h1>
-<p><strong>Title:</strong> <%= @article.title %> </p>
-<p><strong>Description:</strong> <%= @article.description %> </p>
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to "Delete", article_path(@article), data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?"
-  } %> |
-    <%= link_to "Return", articles_path %>
+<h1 class="text-center m-4"><%= @article.title %> </h1>
+<div class="container" >
+    <div class="card" >
+      <div class="card-body">
+        <p class="card-text"><%= simple_format(@article.description) %></p>
+         <%= link_to 'Edit', edit_article_path(@article),class: "btn btn-outline-success" %>
+                                    <%= link_to "Delete", article_path(@article), data: {
+                                        turbo_method: :delete,
+                                        turbo_confirm: "Are you sure?"
+                                    },class: "btn btn-outline-danger"%>
+        </div>
+    </div>
+</div>
+<div class="col text-center m-4">
+           <%= link_to "Return",articles_path, class: "text-secondary " %>
+        </div>
+
+
+

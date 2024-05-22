@@ -1,22 +1,30 @@
-<% if @article.errors.any? %>
-<h2>The following error prevented from editing the article </h2>
-    <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-    </ul>
-<% end %>
 
-<%= form_with model: @article do |f| %>
-<p>
-<%= f.label :title %></br>
-<%= f.text_field :title %>
-</p>
-<p>
-<%= f.label :description %></br>
-<%= f.text_area :description %>
-</p>
-<p>
-<%= f.submit %>
-</p>
-<% end %>
+<div class="container ">
+    <div class="col-10 mx-auto ">
+        <div class="row justify-content-center ">
+            <%= render 'shared/validation_messages'%>
+            <%= form_with model: @article,class:"custom-bg shadow mb-3 rounded" do |f| %>
+                <div class=" form-group pt-4 row ">
+                    <%= f.label :title ,class: "col-sm-2 col-form-label  fs-5" %>
+                    <div class="col-sm-10">
+                    <%= f.text_field :title, class: "form-control shadow rounded ",placeholder: "Title of the article" %>
+                    </div>
+                </div>
+                <div class=" form-group pt-3  row ">
+                    <%= f.label :description, class:"col-sm-2 col-form-label fs-5" %>
+                    <div class="col-sm-10">
+                    <%= f.text_area :description, class: "form-control shadow mb-3  rounded ",  rows:"10",placeholder: "Description" %>
+                    </div>
+                </div>
+
+                <div class=" col text-center">
+                        <%= f.submit class: "btn btn-light btn-lg my-4" %>
+                </div>
+            </div>        
+        <% end %>
+        <div class="col text-center mb-4">
+           <%= link_to "Cancel and return to articles",articles_path, class: "text-secondary " %>
+        </div>
+    </div>
+ 
+</div>
