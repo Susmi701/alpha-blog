@@ -1,7 +1,7 @@
 <div class="container ">
     <div class="col-10 mx-auto ">
         <div class="row justify-content-center ">
-            <%= render 'shared/validation_messages'%>
+            <%= render 'shared/validation_messages', obj: @article%>
             <%= form_with model: @article,class:"custom-bg shadow mb-3 rounded" do |f| %>
                 <div class=" form-group pt-4 row ">
                     <%= f.label :title ,class: "col-sm-2 col-form-label  fs-5" %>
