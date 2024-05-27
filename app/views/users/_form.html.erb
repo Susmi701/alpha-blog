@@ -1,7 +1,7 @@
 <div class="container ">
     <div class="col-10 mx-auto ">
         <div class="row justify-content-center ">
-            <%= render 'shared/validation_messages', obj: @user%>
+            <%= render 'shared/validation_messages', obj: @user %>
             <%= form_with model: @user,class:"custom-bg shadow mb-3 rounded" do |f| %>
                 <div class=" form-group pt-4 row ">
                     <%= f.label :username ,class: "col-sm-2 col-form-label  fs-5" %>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class=" col text-center">
-                        <%= f.submit class: "btn btn-light btn-lg my-4" %>
+                        <%= f.submit "Sign Up", class: "btn btn-outline-success btn-lg my-4" %>
                 </div>
             </div>        
         <% end %>
