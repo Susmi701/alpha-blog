@@ -2,7 +2,10 @@
 <div class="container" >
     <div class="card" >
         <div class="card-header fst-italic text-center">
-                        by <%= @article.user.username if @article.user %>
+                         <%if @article.user%>
+                            by 
+                            <%=link_to @article.user.username ,user_path(@article.user),class:"text-black"  %>
+                        <% end %>
                     </div>
       <div class="card-body">
         <p class="card-text"><%= simple_format(@article.description) %></p>
