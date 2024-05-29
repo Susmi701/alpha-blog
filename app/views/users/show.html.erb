@@ -1,8 +1,10 @@
 <h1 class="text-center m-4"><%= @user.username%></h1>
     <%= gravatar_for @user, size: 200 %>
-<div class="text-center m-4">
-<%= link_to 'Edit your Profile ', edit_user_path(@user),class: "btn btn-outline-primary " %> 
-</div>
+    <%if current_user == @user%>
+        <div class="text-center m-4">
+        <%= link_to 'Edit your Profile ', edit_user_path(@user),class: "btn btn-outline-primary " %> 
+        </div>
+        <%end%>
 <h3 class="text-center m-4">Articles</h3>
 <div class="flickr_pagination">
     <%= will_paginate @articles, :container => false %>

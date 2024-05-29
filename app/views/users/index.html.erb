@@ -13,8 +13,7 @@
                     <div class="card-body ">
                         <%= gravatar_for user, size: 100 %>
                         <h5 class="card-title mt-3"><%= pluralize(user.articles.count,"article")%></h5>
-                        <%= link_to 'View Profile', user_path(user),class: "btn btn-outline-success  " %>
-                        <%= link_to 'Edit Profile', edit_user_path(user),class: "btn btn-outline-primary " %> 
+                        <%= link_to 'View Profile', user_path(user),class: "btn btn-outline-success  " %>                       
                     </div>
                     <div class="card-footer text-muted  ">
                         <small>Joined <%= time_ago_in_words(user.created_at)%> ago,
