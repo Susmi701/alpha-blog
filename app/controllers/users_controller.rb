@@ -56,7 +56,7 @@ end
 
   def require_same_user
     if current_user != @user && !current_user.admin?
-        flash[:notice]="You cannot edit or delete this user "
+        flash[:alert]="You cannot edit or delete this user "
         redirect_to @user
     end
   end
