@@ -1,0 +1,24 @@
+<h1 class="text-center m-4">Create a Category</h1>
+<div class="container ">
+    <div class="col-10 mx-auto ">      
+        <%= render 'shared/validation_messages', obj: @category%>
+        <div class="row justify-content-center ">
+            <%= form_with model: @category,class:"custom-bg shadow mb-3 rounded" do |f| %>
+                <div class=" form-group pt-4 row ">
+                    <%= f.label :name ,"Category name" ,class: "col-sm-2 col-form-label  fs-5" %>
+                    <div class="col-sm-10">
+                    <%= f.text_field :name, class: "form-control shadow rounded ",placeholder: "Enter the Category" %>
+                    </div>
+                </div>
+             
+
+                <div class=" col text-center">
+                        <%= f.submit class: "btn btn-light btn-lg my-4" %>
+                </div>
+            </div>        
+        <% end %>
+        <div class="col text-center mb-4">
+           <%= link_to "Cancel and return to articles",articles_path, class: "text-secondary " %>
+        </div>
+    </div>
+</div>
