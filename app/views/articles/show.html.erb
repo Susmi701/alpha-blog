@@ -8,6 +8,10 @@
                         <% end %>
                     </div>
       <div class="card-body">
+        <%if @article.categories.any? %>
+        <%= render @article.categories%>
+        <%end%>
+          
         <p class="card-text"><%= simple_format(@article.description) %></p>
         <%if current_user == @article.user%>
          <%= link_to 'Edit', edit_article_path(@article),class: "btn btn-outline-success" %>
